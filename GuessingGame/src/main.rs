@@ -1,6 +1,7 @@
 use std::io;
 use rand::Rng; // Rng is a trait
 use std::cmp::Ordering; //Ordering is enum with three values: "Less", "Greater" "Equal"
+use colored::*;
 fn main() {
     println!("guessing Game!!");
     
@@ -15,12 +16,16 @@ fn main() {
         println!("you guessed : {guess}");
     
         let mut guess: u32 = guess.trim().parse().expect("Please type a number!");// trim removes whitespace entered by user while giving input
+        // let  guess: u32 = match guess.trim().parse() {
+        //     Ok(num:!)=>num,
+        //     Err(_)=>continue,
+        // };
         
         match guess.cmp(&secret_number) {
-            Ordering::Less => println!("Too small!"),
-            Ordering::Greater => println!("Too big!"),
+            Ordering::Less => println!("{}","Too small!".red()),
+            Ordering::Greater => println!("{}","Too big!".red()),
             Ordering::Equal => {
-                println!("You win!");
+                println!("{}","You win!".green());
                 break;
             }// end of ordering
            } //end of match

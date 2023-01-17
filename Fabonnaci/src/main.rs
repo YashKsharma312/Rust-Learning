@@ -12,6 +12,7 @@ fn main() {
         let mut next=n1+n2;
         println!("{}
 {}", n1, n2);
+    
         for i in 3..n+1 {
             println!("{}", next);
             n1=n2;

@@ -2,7 +2,6 @@ use std::io;
 fn main() {
     let x:u8=254;
     
-
     let x = 2.0; // f64
 
     let y: f32 = 3.0; // f32

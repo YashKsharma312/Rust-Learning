@@ -7,6 +7,7 @@ fn main() {
     
     let secret_number = rand::thread_rng().gen_range(1..=100);// gen_range is defined in Rng Trait
     //println!("The secret number is: {secret_number}");
+    
 
     loop {
         println!("please input your guess");

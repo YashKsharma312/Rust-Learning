@@ -1,0 +1,54 @@
+//WITHOUT USING '/' OPERATOR
+fn main() {
+
+    pub fn product_except_self(nums: Vec<i32>) -> Vec<i32> {
+    
+        let mut result = Vec::new();
+        let mut vec1=Vec::new();
+        let mut vec2=Vec::new();
+        let mut nums1=Vec::new();
+       
+        for i in (0..(nums.len())).rev(){
+            nums1.push(&nums[i]);
+        }
+      
+        vec1.push(1);
+      
+        vec2.push(1);
+        
+        for i in (0..(nums.len()-1)){
+            vec1.push(&nums[i]*vec1[i]);
+        }
+       
+        
+        for j in (0..(nums.len()-1)) {
+            vec2.push(vec2[j]*nums1[j]);
+        }
+      
+        vec2.reverse();
+     
+        for i in (0..(nums.len())){
+            result.push(vec1[i]*vec2[i]);
+        }
+        
+      result
+    }
+    
+}
+
+//WITH USING '/' OPERATOR
+
+fn main(){
+    fn product_except_self(nums: Vec<i32>) -> Vec<i32> {
+        let mut prod=1;
+        let mut result = Vec::new();
+        for i in &nums{
+            prod*=i;
+        }
+        for j in nums{
+            result.push(&prod/j);
+        }
+        result
+    }
+    println!("{:?}",aa([1,4,3,2].to_vec()));
+}

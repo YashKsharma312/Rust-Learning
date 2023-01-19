@@ -1,0 +1,25 @@
+use std::collections::HashMap;
+fn main(){
+    fn roman_to_int(s: String) -> i32 {
+        let mut Romap = HashMap::new();
+        Romap.insert(String::from("I"), 1);
+        Romap.insert(String::from("V"), 5);
+        Romap.insert(String::from("X"), 10);
+        Romap.insert(String::from("L"), 50);
+        Romap.insert(String::from("C"), 100);
+        Romap.insert(String::from("D"), 500);
+        Romap.insert(String::from("M"), 1000);
+        let n=s.len();
+
+        let mut num=Romap.get(&s[n-1..n]).copied().unwrap_or(0);
+        for i in (0..(s.len()-1)).rev() {
+            if Romap.get(&s[i..i+1]).copied().unwrap_or(0) >= Romap.get(&s[i+1..i+2]).copied().unwrap_or(0) {
+                num += Romap.get(&s[i..i+1]).copied().unwrap_or(0);
+            } else {
+                num -= Romap.get(&s[i..i+1]).copied().unwrap_or(0);
+            }
+        }
+        num
+    }
+
+}

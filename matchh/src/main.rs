@@ -29,7 +29,7 @@ fn main() {
                 25
             }
              
-        }
+       }
 }
 let a=value_in_cents(Coin::Penny);
 let b=value_in_cents(Coin::Quarter(states::atlanta));

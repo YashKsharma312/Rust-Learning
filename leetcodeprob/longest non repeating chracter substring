@@ -1,0 +1,22 @@
+use std::collections::HashMap;
+
+fn length_of_longest_substring(s: String) -> i32 {
+    let mut start = 0;
+    let mut end = 0;
+    let mut length = 0;
+    let mut map = HashMap::new();
+
+    while end < s.len() {
+        let word = s.chars().nth(end).unwrap();
+
+        if map.contains_key(&word) {
+            start = std::cmp::max(start, map[&word] + 1);
+        }
+
+        map.insert(word, end);
+        length = std::cmp::max(length, end - start + 1);
+        end += 1;
+    }
+
+    length as i32
+}

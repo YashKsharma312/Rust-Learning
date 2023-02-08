@@ -1,0 +1,1 @@
+C:\Users\Lenovo\OneDrive\Desktop\Rust\IO_PROJECT\project\target\debug\project.exe: C:\Users\Lenovo\OneDrive\Desktop\Rust\IO_PROJECT\project\src\lib.rs C:\Users\Lenovo\OneDrive\Desktop\Rust\IO_PROJECT\project\src\main.rs
